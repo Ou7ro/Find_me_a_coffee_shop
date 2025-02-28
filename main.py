@@ -12,7 +12,13 @@ def get_user_distance(cafe_coordinates):
 
 
 def random_color():
-    color = ['gray', 'orange', 'darkred', 'cadetblue', 'lightblue']
+    color = [
+        'gray',
+        'orange',
+        'darkred',
+        'cadetblue',
+        'lightblue',
+    ]
     return random.choice(color)
 
 
@@ -38,7 +44,7 @@ def fetch_coordinates(apikey, address):
 def main():
     load_dotenv('token.env')
     api_key = os.environ['api_key']
-    with open("coffee.json", "r") as my_file:
+    with open("coffee.json", "r", encoding='CP1251') as my_file:
         file_contents = my_file.read()
 
     coffee_shops = json.loads(file_contents)
